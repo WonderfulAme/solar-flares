@@ -6,7 +6,7 @@ Valentina Vásques y Amelia Hoyos.
 ## Introducción
 El Sol, especialmente en lugares donde se ubican sus manchas, es muy activo, emitiendo radiación en todas direcciones. Una erupción o llamarada solar es una de estas intensas y repentinas ráfagas de radiación. Estas varían de acuerdo con el ciclo solar de once años. Se cree que una erupción solar ocurre cuando un depósito de energía magnética acelera a gran velocidad iones presentes en el plasma solar, lo que produce radiación. Esta radiación es absorbida por la ionosfera de la Tierra. No representa un peligro directo para la vida en el planeta, sin embargo, sí provoca que la atmósfera superior se ionice, lo que puede interferir con las comunicaciones por radio, dependiendo de la energía de la llamarada solar.
 
-Cuando la actividad solar es tan alta que causa una tormenta geomagnética, puede producir un efecto desastroso en las telecomunicaciones terrestres. Estas tormentas están generalmente asociadas a erupciones solares y, por lo tanto, pueden detectarse. En 1859, ocurrió algo llamado el evento Carrington, durante el cual todas las comunicaciones telegráficas fallaron y aparecieron auroras en toda la tierra, provocando una conmoción generalizada. En Montería, Colombia, se dio el siguiente testimonio:
+Algunas veces, las llamaradas solares son acompañadas por eyecciones de masa coronal (CME), ondas de radiación y viento solar. Esto puede causar una tormenta geomagnética en la tierra, lo puede producir un efecto desastroso en las telecomunicaciones terrestres. Como estas tormentas están generalmente asociadas a erupciones solares pueden detectarse antes de que sucedan. En 1859, ocurrió algo llamado el evento Carrington, durante el cual el sol liberó una CME tan grande que en la Tierra las comunicaciones telegráficas fallaron y aparecieron auroras en toda la tierra, provocando una conmoción generalizada. En Montería, Colombia, se dio el siguiente testimonio:
 
 <blockquote>
 En Marzo de 1859 los habitantes de la ciudad contemplaron estupefactos un fenómeno celeste que semejaba un incendio de vastas proporciones. Negros nubarrones surcados a cada instante por candilejas y extraños fulgores; inmensas lenguas de llamas y deslumbrantes globos luminosos que deshacían para volver a condensarse segundos después, daban la impresión de cien volcanes en erupción. Y en el centro de aquellos inmensos espacios se formó, claramente dibujada, una enorme S que allí permaneció mientras duraba el fantástico espectáculo causado por la madrugada. Tan intensa era la claridad que podía confundirse con una aurora boreal y penetraba hasta el interior de las casas.
@@ -18,20 +18,25 @@ Imprenta Departamental de Córdoba (1971), pp. 150-151
 </blockquote>
 Si algo así sucediera en la actualidad, toda la tecnología de la que dependemos dejaría momentáneamente de funcionar. Por lo tanto, es importante prepararse para un evento así y saber con anticipación si sucederá en algún momento determinado. Aquí entra en juego la detección de llamaradas solares, que como ya sabemos, son un indicador de una posible tormenta geomagnética.
 
+## Definiciones
+**Atenuador**: Un atenuador es un dispositivo que reduce la intensidad de una señal sin alterar su forma de onda. Cuando está en un estado "grueso", significa que se utiliza una configuración que reduce significativamente la intensidad de la señal. En cambio, un estado "delgado" no la reduce tanto. Si está en "ambos" estados, significa que se están utilizando estos dos tipos de configuraciones en diferentes atenuadores al realizar mediciones.
 
 ## Entendimiento del área de estudio
 Los datos que usaremos son tomados de [Kaggle, Solar Flares from RHESSI Mission](https://www.kaggle.com/datasets/khsamaha/solar-flares-rhessi/data). Estos datos provienen de RHESSI, un observatorio de erupciones solares de la NASA. 
 
+Fecha: Datos recolectados de  2002 - 2018
+Tamaño: 116143 x 18
+
 | Columna      | Tipo de dato | Tamaño máximo del dato | Descripción |
 |--------------|--------------|------------------------|-------------|
 | Flare        | int64        | 28                     | Un número de identificación, (y)ymmddnn, por ejemplo, 2021213 es el treceavo destello encontrado el 12 de febrero de 2002. |
-| Date         | object       | 59                     | La fecha en que ocurrió el destello |
-| Start time   | object       | 57                     | Hora de inicio del destello |
-| Peak time    | object       | 57                     | Hora pico del destello |
-| End time     | object       | 57                     | Hora de finalización del destello |
+| Date         |datetime64[ns]| 59                     | La fecha en que ocurrió el destello |
+| Start time   |datetime64[ns]| 57                     | Hora de inicio del destello |
+| Peak time    |datetime64[ns]| 57                     | Hora pico del destello |
+| End time     |datetime64[ns]| 57                     | Hora de finalización del destello |
 | Duration     | int64        | 28                     | Duración del destello en segundos |
-| Peak counts  | int64        | 28                     | Tasa de conteos o eventos por segundo detectados en un rango de energía de 6 a 12 kiloelectronvoltios (keV) durante la duración de la llamarada solar, promediados sobre todos los detectores, incluido el fondo |
-| Total Counts | float64      | 24                     | Número total de conteos o eventos detectados un rango de energía de 6 a 12 kiloelectronvoltios (keV) durante la duración de la llamarada solar, sumados sobre todos los detectores, incluido el fondo |
+| Peak counts  | int64        | 28                     | Tasa de conteos o picos de radiación por segundo detectados en un rango de energía de 6 a 12 kiloelectronvoltios (keV) durante la duración de la llamarada solar, promediados sobre todos los detectores, incluido el fondo |
+| Total Counts | float64      | 24                     | Número total de conteos o picos de radiación detectados un rango de energía de 6 a 12 kiloelectronvoltios (keV) durante la duración de la llamarada solar, sumados sobre todos los detectores, incluido el fondo |
 | Energy       | object       | 59                     | La banda de energía en KeV más alta en la que se observó el destello. |
 | X pos        | int64        | 28                     | Posición del destello en segundos de arco desde el centro del sol |
 | Y pos        | int64        | 28                     | Posición del destello en segundos de arco desde el centro del sol |
