@@ -1,5 +1,5 @@
 # Detección de Llamaradas Solares
-Valentina Vásques y Amelia Hoyos.
+Valentina Vásquez, Ricardo Gandica y Amelia Hoyos.
 
 [Dataset de Erupciones solares](https://deepblue.lib.umich.edu/data/concern/data_sets/6w924c02q)
 
